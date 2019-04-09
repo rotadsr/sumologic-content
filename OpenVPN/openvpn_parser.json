@@ -1,0 +1,10 @@
+_sourceCategory=<sourceCategoryName>
+//| parse "* *  * * * " as weekday,month,day,hour,year
+| parse "MULTI: Learn: * -> */*:*" as user_vpn_ip, user_name, user_IP, user_port nodrop
+| parse "MULTI: primary virtual IP for */*:*: *" as user_name, user_IP,user_port, user_vpn_ip nodrop
+| parse "* *  * * * */*:* PUSH: Received control message: '*'" as weekday,month,day,hour,year,user_name, user_IP,user_port,push_message nodrop
+| parse "* *  * * * */*:* OPTIONS IMPORT: reading client specific options from: *" as weekday,month,day,hour,year,user_name, user_IP,user_port,from_file nodrop
+| parse "* *  * * * */*:* [*] Inactivity timeout (--ping-restart), restarting" as weekday,month,day,hour,year,user_name, user_IP,user_port, username
+| parse "* *  * * * *:* Data Channel Decrypt: Cipher 'AES-256-CBC' initialized with 256 bit key" as weekday,month,day,hour,year,user_name_IP, user_port nodrop
+| parse "* *  * * * *:* Data Channel Encrypt: Using 512 bit message hash 'SHA512' for HMAC authentication" as weekday,month,day,hour,year,user_name_IP, user_port nodrop
+| parse "* *  * * * *:* [*] Peer Connection Initiated with [*]*:*" as weekday,month,day,hour,year,user_name_IP,use_rname_port, user_name, interface,user_IP,user_port nodrop
